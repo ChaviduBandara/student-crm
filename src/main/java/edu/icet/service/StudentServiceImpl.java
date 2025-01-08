@@ -1,6 +1,8 @@
 package edu.icet.service;
 
 import edu.icet.dto.Student;
+import edu.icet.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -8,9 +10,8 @@ import java.util.List;
 
 @Service
 public class StudentServiceImpl implements StudentService{
-        public void add(String data){
-            System.out.println(data);
-    }
+
+    StudentRepository repository;
 
     @Override
     public List<Student> getStudent() {
