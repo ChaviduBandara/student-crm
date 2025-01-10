@@ -13,13 +13,16 @@ public class StudentServiceImpl implements StudentService{
 
     StudentRepository repository;
 
+
+    // ** Doing a CRUD with the DB **
     @Override
-    public List<Student> getStudent() {
-        ArrayList<Student> stdList = new ArrayList<>();
-        stdList.add(new Student(1, "Kamal", "Kegalle"));
-        stdList.add(new Student(2, "Sunil", "Hettimulla"));
-        stdList.add(new Student(3, "Wimal", "Wattala"));
-        stdList.add(new Student(4, "Nimal" , "Panadura"));
-        return stdList;
+    public List<Student> getStudent() {    //To print the students from the DB (reading)
+        List<Student> all = repository.findAll();   // findAll() => SELECT * FROM student
+        return all;
+    }
+ 
+    @Override
+    public void addStudent(Student student) {   //To add a student to the DB (updating)
+        repository.save(student);   // short form of => (INSERT INTO student, VALUES (*****);
     }
 }
