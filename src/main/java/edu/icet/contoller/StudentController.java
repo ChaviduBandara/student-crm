@@ -22,7 +22,7 @@ public class StudentController {
     }
 
     @PostMapping
-    public void addStudent(@RequestBody Student student){
+    public void addStudent(@RequestBody Student student){   //RequestBody annotation eka danne mkd api postmon body eke data ekak type karalane send karanne, eka nisa e annotation eka oni.
         service.addStudent(student);
     }
 

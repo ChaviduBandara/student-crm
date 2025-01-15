@@ -7,4 +7,5 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update    # methana update wenuwat create damma parana data store wenne na database eke re-run karankot.
+                          # but mulinma DB eka hadakot we must put create.
